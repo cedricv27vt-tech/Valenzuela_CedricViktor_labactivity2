@@ -18,6 +18,10 @@ How to Run
 
 1\. Open PowerShell in the project directory.
 
+&#x09;- go to the folder then right click to open powershell
+
+
+
 2\. Enable script execution for the session (if needed):
 
 &#x20;  

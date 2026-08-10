@@ -72,6 +72,17 @@ def update_student(records):
         print("❌ Invalid selection.")
 
 
+def delete_student(records):
+    print("\n--- Delete Student Record ---")
+    student_id = input("Enter Student ID to delete: ").strip()
+
+    if student_id in records:
+        removed_student = records.pop(student_id)
+        print(f"✅ Record for {removed_student['name']} ({student_id}) has been deleted successfully.")
+    else:
+        print("❌ Error: Student ID not found.")
+
+
 def main():
     student_db = {}
 
@@ -80,9 +91,10 @@ def main():
         print("1. Add New Student Record")
         print("2. View All Student Records")
         print("3. Update Student Record")
-        print("4. Exit")
+        print("4. Delete Student Record")
+        print("5. Exit")
         
-        choice = input("Enter choice (1-4): ").strip()
+        choice = input("Enter choice (1-5): ").strip()
 
         if choice == "1":
             create_student(student_db)
@@ -91,10 +103,12 @@ def main():
         elif choice == "3":
             update_student(student_db)
         elif choice == "4":
+            delete_student(student_db)
+        elif choice == "5":
             print("\nExiting program... Goodbye!")
             break
         else:
-            print("❌ Invalid option. Please enter a number from 1 to 4.")
+            print("❌ Invalid option. Please enter a number from 1 to 5.")
 
 
 if __name__ == "__main__":
